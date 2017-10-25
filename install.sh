@@ -20,13 +20,15 @@ USR_NAME=$(echo $USER)
 case ${USR_NAME} in
 	root) break ;;
 	*)	echo ""
-		echo  " ${USR_NAME}:  Please execute the script using 'sudo'" 
+		echo  " ${USR_NAME}:  Please execute the script using 'sudo'"
 		echo ""
 		echo " example: 'sudo '"
 		exit 0	;;
 	esac	#	end switch
-	
+
 sh -c "cp ${scriptname} ${execut_dir}/${PROG_NAME}"
+sh -c "chown root:root ${execut_dir}/${PROG_NAME}"
+sh -c "chmod +x ${execut_dir}/${PROG_NAME}"
 
 ls -l ${execut_dir}/${PROG_NAME}
 
