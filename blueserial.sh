@@ -96,8 +96,8 @@ while read input ;do
 						ser_port="/dev/rfcomm0"
 #		 				$(rfcomm connect ${ser_port} ${dev_mac} 8)
 #		 				$(rfcomm connect /dev/rfcomm3 34:81:F4:27:D7:71 8)
-						$(gnome-terminal -x rfcomm connect ${ser_port}  ${dev_mac} 8 &&
-						sleep 2 && gnome-terminal -x cat ${ser_port}  )
+						$(gnome-terminal -- rfcomm connect ${ser_port}  ${dev_mac} 8 &&
+						sleep 2 && gnome-terminal -- cat ${ser_port}  )
 						break
 		 				;;
 		 			0)
